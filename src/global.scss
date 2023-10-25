@@ -1,0 +1,82 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: "MrDeHaviland";
+    src: url("./assets/fonts/MrDeHaviland-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("./assets/fonts/Nunito-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url("./assets/fonts/Kanit-Regular.ttf")
+}
+
+@keyframes scroll-img {
+    0% {
+      scale: 30%;
+      opacity: 0;
+    }
+    50% {
+      scale: 60%;
+      opacity: 0.8;
+    }
+    100% {
+      scale: 100%;
+      opacity: 1;
+    }
+  }
+  
+  
+
+  img{
+    animation-timeline: --image-scroll; /* binding element (--image-scroll) with the scroll */
+    animation-name: scroll-img;
+    
+    view-timeline-name: --image-scroll; /* create the element (--image-scroll) */
+    view-timeline-axis: block; 
+
+	animation-range: entry 25% cover 30%;
+	animation-fill-mode: both;
+  }
+
+  .timer1{
+    animation-timeline: --image-scroll; /* binding element (--image-scroll) with the scroll */
+    animation-name: scroll-img;
+    
+    view-timeline-name: --image-scroll; /* create the element (--image-scroll) */
+    view-timeline-axis: block; 
+
+	animation-range: entry 25% cover 30%;
+	animation-fill-mode: both;
+  }
+
+  

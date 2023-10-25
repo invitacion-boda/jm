@@ -1,0 +1,135 @@
+
+<ion-content color="light">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Dios decidió el tiempo perfecto para unir nuestros caminos.</ion-card-subtitle>
+      <ion-card-title>Josué & Marichuy</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="color:white" class="noscasamos">
+      ¡Nos Casamos!
+    </ion-card-content>
+  </ion-card>
+  <app-reproductor></app-reproductor>
+  <div style="text-align:center">
+    <img src="../../../assets/imagenes/anillos1.png" height="75"/>
+  </div>
+  <ion-label class="ion-text-center ion-padding">Con nuestro amor, la presencia de Dios entre nosotros y la bendición de nuestros padres:</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="border-right: solid 1px #8C9DAD;">
+        Guillermina Delgado Castellanos <br><br>
+        Juan Manuel Arechiga Rodríguez
+      </ion-col>
+      <ion-col>
+        María del Carmen Nuño Fregozo <br><br>
+        Rafael García Nande
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-label class="ion-text-center">Y acompañados por nuestros padrinos:</ion-label>
+  <ion-label class="ion-text-center">Sara García Nande</ion-label>
+  <ion-label class="ion-text-center">Rafael Villegas García</ion-label>
+  <br>
+  <br>
+  <div style="text-align:center" class="square">
+    <img src="../../../assets/imagenes/flores4.png" height="100"/>
+  </div>
+  <br>
+  <ion-card>
+    <ion-card-content style="color:white" class="frase">
+      Hay momentos en la vida que son especiales por si solos, pero compartirlos con las personas que amamos los hace inolvidables.
+      <br>
+      Tenemos el honor de invitarlos a nuestro enlace matrimonial.
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-label class="ion-text-center fecha">Sábado 20 de Enero del 2024</ion-label>
+  <app-contador></app-contador>
+  <div style="text-align:center">
+    <img src="../../../assets/imagenes/flores5.png" height="100"/>
+  </div>
+  <br>
+  <ion-card>
+    <ion-card-content style="color:white;padding-bottom:0px" class="frase">
+      <ion-grid style="padding-bottom:0px">
+        <ion-row>
+          <ion-col style="border-right: solid 1px white">
+            Acompañanos en nuestra ceremonia religiosa en:
+          </ion-col>
+          <ion-col>
+            Para luego celebrar con una recepción en:
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid style="padding-top:0px;padding-bottom:0px">
+        <ion-row>
+          <ion-col style="border-right: solid 1px white">
+            <img src="../../../assets/imagenes/church.png" height="50"/>
+          </ion-col>
+          <ion-col>
+            <img src="../../../assets/imagenes/brindis.png" height="50"/>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid style="padding-top:0px;padding-bottom:0px">
+        <ion-row>
+          <ion-col style="border-right: solid 1px white">
+            Parroquia de San Miguel  Arcángel <br>  
+            5:00 pm 
+          </ion-col>
+          <ion-col>
+            Terraza Rondinela<br>
+            Calle San Diego #597, Cocula, Jal. <br>
+            7:00 pm 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-grid style="padding-top:0px">
+      <ion-row>
+        <ion-col style="border-right: solid 1px white">
+          <ion-button (click)="openMapaMisa()" class="linksBtn">
+            Ver mapa
+            <ion-icon slot="end" name="map"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="openMapaLocal()" class="linksBtn">
+            Ver mapa
+            <ion-icon slot="end" name="map"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <br>
+  <ion-label class="ion-text-center ion-padding">Gracias por ser parte de este día tan especial para nosotros.</ion-label>
+  <br>
+  <ion-title><b>Te esperamos.</b></ion-title>
+  <br>
+  <div style="text-align:center">
+    <img src="../../../assets/imagenes/novios1.png" height="100"/>
+  </div>
+  <br>
+  <ion-title>Confirma tu asistencia.</ion-title>
+  <ion-grid class="ion-padding">
+    <ion-row *ngFor="let item of list">
+      <ion-col>
+        {{item.Nombre}}
+      </ion-col>
+      <ion-col >
+        <ion-button (click)="confirmarAsistencia(item.Id)" *ngIf='!item.Asistira' class="confirmacionBtn">
+          Confirmar
+        </ion-button>
+        <ion-button (click)="desconfirmarAsistencia(item.Id)" *ngIf='item.Asistira' class="confirmacionBtn">
+          Desconfirmar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<script src="/animacion.js"></script>
+<script>
+  console.log("gaby")
+</script>
