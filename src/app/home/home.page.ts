@@ -22,15 +22,6 @@ export class HomePage {
     if(this.id){
       this.db.collection(this.id).valueChanges().subscribe(ent => {
         this.list = ent;
-        console.log(this.list)
-        /*for (var item of this.elem) {
-          const t = {
-            nombre: item.Nombre,
-            asistira: item.Asistira,
-            id: item.Id
-          };
-          this.list.push(t);
-        }*/
       });
     }
     
@@ -45,7 +36,6 @@ export class HomePage {
   }
 
   confirmarAsistencia(userId: any){
-    console.log(userId)
     this.db.collection(this.id).doc(userId).ref.update({
       Asistira: true
     }).then(async (test)=>{
@@ -59,14 +49,11 @@ export class HomePage {
         });
         toast.present().then();
     });
-    //this.list = [];
   }
   desconfirmarAsistencia(userId: any){
-    //this.list = [];
     this.db.collection(this.id).doc(userId).ref.update({
       Asistira: false
     }).then(async (test)=>{
-      //this.list = [];
       const toast: HTMLIonToastElement=
       await this.toastController.create({
         message: 'Asistencia Desconfirmada',

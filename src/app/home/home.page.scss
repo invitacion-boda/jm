@@ -73,7 +73,7 @@ ion-label {
   width: 100%;
 }
 
-ion-col {
+ion-grid {
   text-align: center;
   font-family: 'Nunito';
 }
@@ -93,8 +93,56 @@ ion-title {
   width: 100%;
 }
 
+.titulo {
+  text-align: center;
+  font-family: 'Nunito';
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+.titulo1 {
+  text-align: center;
+  font-family: 'Nunito';
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  color: #627F9F;;
+}
+
 .fecha {
   font-size: 20px;
   font-weight: bold;
 }
 
+.datos {
+  text-align: center;
+  font-family: 'Nunito';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.datosLabel {
+  border-top: 2px solid #627F9F;
+  border-bottom: 2px solid #627F9F;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.dia {
+  text-align: center;
+  font-family: 'Nunito';
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 50px;
+  font-weight: bold;
+  color: #627F9F;
+  padding: 0px;
+}

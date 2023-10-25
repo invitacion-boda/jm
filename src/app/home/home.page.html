@@ -16,7 +16,7 @@
   <ion-label class="ion-text-center ion-padding">Con nuestro amor, la presencia de Dios entre nosotros y la bendición de nuestros padres:</ion-label>
   <ion-grid>
     <ion-row>
-      <ion-col style="border-right: solid 1px #8C9DAD;">
+      <ion-col style="border-right: solid 1px #627F9F;">
         Guillermina Delgado Castellanos <br><br>
         Juan Manuel Arechiga Rodríguez
       </ion-col>
@@ -44,7 +44,20 @@
     </ion-card-content>
   </ion-card>
   <br>
-  <ion-label class="ion-text-center fecha">Sábado 20 de Enero del 2024</ion-label>
+  <ion-grid class="ion-padding">
+    <ion-label class="ion-text-center fecha">Enero</ion-label>
+    <ion-row>
+      <ion-col class="datos">
+        <ion-label class="datosLabel">Sábado</ion-label>
+      </ion-col>
+      <ion-col class="dia">
+        20
+      </ion-col>
+      <ion-col class="datos">
+        <ion-label class="datosLabel">2024</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <app-contador></app-contador>
   <div style="text-align:center">
     <img src="../../../assets/imagenes/flores5.png" height="100"/>
@@ -54,17 +67,17 @@
     <ion-card-content style="color:white;padding-bottom:0px" class="frase">
       <ion-grid style="padding-bottom:0px">
         <ion-row>
-          <ion-col style="border-right: solid 1px white">
-            Acompañanos en nuestra ceremonia religiosa en:
+          <ion-col style="border-right: dashed 1px white">
+            Acompañanos en nuestra ceremonia religiosa:
           </ion-col>
           <ion-col>
-            Para luego celebrar con una recepción en:
+            Para luego celebrar con una recepción:
           </ion-col>
         </ion-row>
       </ion-grid>
       <ion-grid style="padding-top:0px;padding-bottom:0px">
         <ion-row>
-          <ion-col style="border-right: solid 1px white">
+          <ion-col style="border-right: dashed 1px white">
             <img src="../../../assets/imagenes/church.png" height="50"/>
           </ion-col>
           <ion-col>
@@ -74,21 +87,21 @@
       </ion-grid>
       <ion-grid style="padding-top:0px;padding-bottom:0px">
         <ion-row>
-          <ion-col style="border-right: solid 1px white">
-            Parroquia de San Miguel  Arcángel <br>  
-            5:00 pm 
+          <ion-col style="border-right: dashed 1px white">
+            Hora: 5:00 pm <br> 
+            Parroquia de San Miguel  Arcángel  
           </ion-col>
           <ion-col>
+            Hora: 7:00 pm <br>
             Terraza Rondinela<br>
-            Calle San Diego #597, Cocula, Jal. <br>
-            7:00 pm 
+            Calle San Diego #597, Cocula, Jal. 
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
     <ion-grid style="padding-top:0px">
       <ion-row>
-        <ion-col style="border-right: solid 1px white">
+        <ion-col style="border-right: dashed 1px white">
           <ion-button (click)="openMapaMisa()" class="linksBtn">
             Ver mapa
             <ion-icon slot="end" name="map"></ion-icon>
@@ -106,13 +119,13 @@
   <br>
   <ion-label class="ion-text-center ion-padding">Gracias por ser parte de este día tan especial para nosotros.</ion-label>
   <br>
-  <ion-title><b>Te esperamos.</b></ion-title>
+  <ion-label class="titulo"><b>Te esperamos.</b></ion-label>
   <br>
   <div style="text-align:center">
     <img src="../../../assets/imagenes/novios1.png" height="100"/>
   </div>
   <br>
-  <ion-title>Confirma tu asistencia.</ion-title>
+  <ion-label class="titulo">Confirma tu asistencia.</ion-label>
   <ion-grid class="ion-padding">
     <ion-row *ngFor="let item of list">
       <ion-col>
@@ -129,7 +142,3 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-<script src="/animacion.js"></script>
-<script>
-  console.log("gaby")
-</script>
