@@ -16,7 +16,7 @@ export class ReproductorComponent  implements OnInit {
   playlist: Track [] = [
     {
       name:'Lifetime',
-      path: '../../../assets/song/for you.mp3'
+      path: 'assets/song/for you.mp3'
     }
   ];
   player: Howl | null = null;
@@ -38,7 +38,7 @@ export class ReproductorComponent  implements OnInit {
       this.player.stop();
     }
     this.player = new Howl({
-      src: ['../../../assets/song/for you.mp3'],
+      src: ['assets/song/for you.mp3'],
       onplay: () => {
         this.isPlaying = true;
         this.activeTrack = track;
