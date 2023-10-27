@@ -13,27 +13,19 @@ export interface Track {
   styleUrls: ['./reproductor.component.scss'],
 })
 export class ReproductorComponent  implements OnInit {
-  playlist: Track [] = [
-    {
-      name:'Lifetime',
-      path: 'assets/song/for you.mp3'
-    }
-  ];
   player: Howl | null = null;
   isPlaying = false;
-  activeTrack: Track | null = null;
   progress=0;
   @ViewChild('range', { static: false })
   range!: IonRange;
-  begin=0;
-  end=0;
-  constructor() { 
+  constructor() {
+    this.start();
   }
 
   ngOnInit() {
   }
   
-  start(track: Track){
+  start(){
     if(this.player){
       this.player.stop();
     }
@@ -41,12 +33,10 @@ export class ReproductorComponent  implements OnInit {
       src: ['assets/song/for you.mp3'],
       onplay: () => {
         this.isPlaying = true;
-        this.activeTrack = track;
         this.updateProgress();
       }    
     });
     this.player.play();
-    this.end=this.player?.duration();
   }
 
   togglePlayer(pause: boolean){
@@ -58,7 +48,7 @@ export class ReproductorComponent  implements OnInit {
         this.player.play();
       }
     }else{
-      this.start(this.playlist[0]);
+      this.start();
     }
   }
 
@@ -74,9 +64,8 @@ export class ReproductorComponent  implements OnInit {
     if(this.player){
       let seek = this.player.seek();
       this.progress=(seek / this.player.duration()) * 100 || 0;
-      this.begin=seek;
       if(this.progress==0 && seek==0){
-        this.start(this.playlist[0]);
+        this.start();
       }
       setTimeout(()=>{
         this.updateProgress();

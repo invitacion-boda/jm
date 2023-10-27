@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute } from "@angular/router";
-import { Integrantes } from '../Modelos/Integrantes';
 import { ToastController } from '@ionic/angular';
 
 
