@@ -13,13 +13,19 @@ export interface Track {
   styleUrls: ['./reproductor.component.scss'],
 })
 export class ReproductorComponent  implements OnInit {
-  player: Howl | null = null;
+  player: Howl = new Howl({
+    src: ['assets/song/for you.mp3'],
+    onplay: () => {
+      this.isPlaying = true;
+      this.updateProgress();
+    }    
+  });
   isPlaying = false;
   progress=0;
   @ViewChild('range', { static: false })
   range!: IonRange;
   constructor() {
-    this.start();
+    
   }
 
   ngOnInit() {
@@ -29,13 +35,13 @@ export class ReproductorComponent  implements OnInit {
     if(this.player){
       this.player.stop();
     }
-    this.player = new Howl({
+    /*this.player = new Howl({
       src: ['assets/song/for you.mp3'],
       onplay: () => {
         this.isPlaying = true;
         this.updateProgress();
       }    
-    });
+    });*/
     this.player.play();
   }
 
