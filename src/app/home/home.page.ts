@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Params } from "@angular/router";
 import { ToastController } from '@ionic/angular';
 import { timer } from 'rxjs';
-import  { filter } from 'rxjs';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ export class HomePage {
   _hour = this._minute * 60;
   _day = this._hour * 24;
 
-  constructor(private route: ActivatedRoute, private db: AngularFirestore, private toastController: ToastController) {}
+  constructor(private meta: Meta, private route: ActivatedRoute, private db: AngularFirestore, private toastController: ToastController) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id");
@@ -43,7 +43,12 @@ export class HomePage {
         this.disabledButtons=true;
       }
     });
-    
+    this.meta.addTags([ 
+      { name: 'description', content: 'Te invitamos a nuestra boda' }, 
+      { name: 'title', content: 'J&M' },
+      { name: 'type', content: 'website' },
+      { name: 'image', content: '"https://firebasestorage.googleapis.com/v0/b/boda-2a183.appspot.com/o/boda1.jpg?alt=media&token=7febc69a-ce3a-47c0-8beb-745d881ba99e&_gl=1*5eo3y1*_ga*MTY1MjgxMDg5MS4xNjk3ODU5ODY2*_ga_CW55HF8NVT*MTY5ODcyMzY5MS4xMC4xLjE2OTg3MjM3MjMuMjguMC4w' }
+    ]);
   }
   
   openMapaLocal(){
