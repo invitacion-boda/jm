@@ -128,20 +128,28 @@
   <ion-label class="titulo"><b>Te esperamos.</b></ion-label>
   <br>
   <div style="text-align:center">
-    <img src="assets/imagenes/novios1.png" height="100"/>
+    <img src="assets/imagenes/test123.png" height="100"/>
   </div>
   <br>
-  <ion-label class="titulo">Confirma tu asistencia y únete a la celebración</ion-label>
+  <ion-label class="titulo">Confirma tu asistencia hasta el 20 de Diciembre</ion-label>
   <ion-grid class="ion-padding">
     <ion-row *ngFor="let item of list">
       <ion-col>
         {{item.Nombre}}
       </ion-col>
-      <ion-col >
+      <ion-col *ngIf='!disabledButtons'>
         <ion-button (click)="confirmarAsistencia(item.Id)" *ngIf='!item.Asistira' class="confirmacionBtn">
           Confirmar
         </ion-button>
         <ion-button (click)="desconfirmarAsistencia(item.Id)" *ngIf='item.Asistira' class="confirmacionBtn">
+          Desconfirmar
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf='disabledButtons'>
+        <ion-button (click)="confirmarAsistencia(item.Id)" *ngIf='!item.Asistira' class="confirmacionBtn" disabled>
+          Confirmar
+        </ion-button>
+        <ion-button (click)="desconfirmarAsistencia(item.Id)" *ngIf='item.Asistira' class="confirmacionBtn" disabled>
           Desconfirmar
         </ion-button>
       </ion-col>

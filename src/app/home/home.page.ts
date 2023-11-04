@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 import { ToastController } from '@ionic/angular';
-
+import { timer } from 'rxjs';
+import  { filter } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,15 @@ export class HomePage {
   id: any;
   public list: any = [];
   public elem: any;
+  source = timer(0, 1000);
+  clock: any;
+  disabledButtons = false;
+  end: any;
+  now: any;
+  _second = 1000;
+  _minute = this._second * 60;
+  _hour = this._minute * 60;
+  _day = this._hour * 24;
 
   constructor(private route: ActivatedRoute, private db: AngularFirestore, private toastController: ToastController) {}
 
@@ -23,7 +33,16 @@ export class HomePage {
         this.list = ent;
       });
     }
-    
+    this.clock = this.source.subscribe(t => {
+      this.now = new Date();
+      this.end = new Date('12/20/2023');
+      
+      let distance = this.end - this.now;
+      var day = Math.floor(distance / this._day);
+      if(day<0){
+        this.disabledButtons=true;
+      }
+    });
     
   }
   
