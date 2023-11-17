@@ -27,35 +27,35 @@
 }
 
 ion-card {
-  --background: #627F9F;
+  --background: #72C3FA;
   margin-left: 0%;
   margin-right: 0%;
   border-radius: 0%;
 }
 
 .confirmacionBtn {
-  --background: #3C5B8A;
+  --background: #00018A;
 }
 
 .linksBtn {
-  --background: #BCCFE6;
-  color: black;
+  --background: #00018A;
+  color: white;
 }
 .nombres {
-  --color: white;
+  --color: #000283;
   text-align: center;
   font-family: 'MrDeHaviland';
   font-size: 70px;
 }
 .separador {
-  --color: white;
+  --color: #000283;
   text-align: center;
   font-family: 'MrDeHaviland';
   font-size: 50px;
 }
 
 ion-card-subtitle {
-  --color: white;
+  --color: #002247;
   text-align: center;
   font-family: 'Kanit';
   font-size: 17px;
@@ -69,7 +69,7 @@ ion-card-subtitle {
 }
 
 .apellidos {
-  --color: white;
+  --color: #000283;
   text-align: center;
   font-family: 'MrDeHaviland';
   font-size: 50px;
@@ -139,8 +139,8 @@ ion-title {
 }
 
 .datosLabel {
-  border-top: 2px solid #627F9F;
-  border-bottom: 2px solid #627F9F;
+  border-top: 2px solid #00C0FE;
+  border-bottom: 2px solid #00C0FE;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -153,11 +153,11 @@ ion-title {
   width: 100%;
   font-size: 50px;
   font-weight: bold;
-  color: #627F9F;
+  color: #00C0FE;
   padding: 0px;
 }
 
 .papas {
-  color: #627F9F;
+  color: #000283;
   font-weight: bold;
 }

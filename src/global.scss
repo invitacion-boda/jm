@@ -79,4 +79,14 @@
 	animation-fill-mode: both;
   }
 
+  .move{
+    animation-timeline: --image-scroll; /* binding element (--image-scroll) with the scroll */
+    animation-name: scroll-img;
+    
+    view-timeline-name: --image-scroll; /* create the element (--image-scroll) */
+    view-timeline-axis: block; 
+
+	animation-range: entry 25% cover 30%;
+	animation-fill-mode: both;
+  }
   

@@ -35,7 +35,7 @@ export class HomePage {
     }
     this.clock = this.source.subscribe(t => {
       this.now = new Date();
-      this.end = new Date('12/20/2023');
+      this.end = new Date('01/03/2024');
       
       let distance = this.end - this.now;
       var day = Math.floor(distance / this._day);
@@ -43,12 +43,6 @@ export class HomePage {
         this.disabledButtons=true;
       }
     });
-    this.meta.addTags([ 
-      { name: 'description', content: 'Te invitamos a nuestra boda' }, 
-      { name: 'title', content: 'J&M' },
-      { name: 'type', content: 'website' },
-      { name: 'image', content: '"https://firebasestorage.googleapis.com/v0/b/boda-2a183.appspot.com/o/boda1.jpg?alt=media&token=7febc69a-ce3a-47c0-8beb-745d881ba99e&_gl=1*5eo3y1*_ga*MTY1MjgxMDg5MS4xNjk3ODU5ODY2*_ga_CW55HF8NVT*MTY5ODcyMzY5MS4xMC4xLjE2OTg3MjM3MjMuMjguMC4w' }
-    ]);
   }
   
   openMapaLocal(){
