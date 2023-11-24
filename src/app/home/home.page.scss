@@ -25,9 +25,16 @@
 #container a {
   text-decoration: none;
 }
+ 
+.principal{
+  background: linear-gradient(#03C0FA, #000180);
+  margin-left: 0%;
+  margin-right: 0%;
+  border-radius: 0%;
+}
 
-ion-card {
-  --background: #72C3FA;
+.secundarios {
+  --background: #00C0FE;
   margin-left: 0%;
   margin-right: 0%;
   border-radius: 0%;
@@ -42,16 +49,16 @@ ion-card {
   color: white;
 }
 .nombres {
-  --color: #000283;
+  --color: white;
   text-align: center;
-  font-family: 'MrDeHaviland';
-  font-size: 70px;
+  font-family: 'GreatVibes';
+  font-size: 50px;
 }
 .separador {
-  --color: #000283;
   text-align: center;
-  font-family: 'MrDeHaviland';
-  font-size: 50px;
+  font-family: 'GreatVibes';
+  font-size: 40px;
+  --color: white;
 }
 
 ion-card-subtitle {
@@ -139,8 +146,8 @@ ion-title {
 }
 
 .datosLabel {
-  border-top: 2px solid #00018A;
-  border-bottom: 2px solid #00018A;
+  border-top: 2px solid #efb810;
+  border-bottom: 2px solid #efb810;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -153,11 +160,12 @@ ion-title {
   width: 100%;
   font-size: 50px;
   font-weight: bold;
-  color: #00018A;
+  color: #efb810;
   padding: 0px;
 }
 
 .papas {
-  color: #000283;
+  color: #efb810;
   font-weight: bold;
+  font-size: 18px;
 }
