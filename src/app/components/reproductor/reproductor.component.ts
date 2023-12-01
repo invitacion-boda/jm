@@ -29,6 +29,7 @@ export class ReproductorComponent  implements OnInit {
   }
 
   ngOnInit() {
+    this.start();
   }
   
   start(){

@@ -34,7 +34,8 @@
 }
 
 .secundarios {
-  --background: #00C0FE;
+  //--background: #00C0FE;
+  background: linear-gradient(#03C0FA, #000180);
   margin-left: 0%;
   margin-right: 0%;
   border-radius: 0%;
@@ -42,11 +43,14 @@
 
 .confirmacionBtn {
   --background: #00018A;
+  //--background: linear-gradient(#03C0FA, #000180);
+  color: white;
 }
 
 .linksBtn {
-  --background: #00018A;
-  color: white;
+  //--background: #00018A;
+  --background: #C0C0C0;
+  color: #000180;
 }
 .nombres {
   --color: white;

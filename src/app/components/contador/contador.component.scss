@@ -1,10 +1,12 @@
 .timer1 {
 	max-width: 100%;
 	padding: 10px;
-	background: #0080FF;
+	//background: #0080FF;
+    background: linear-gradient(#03C0FA, #000180);
     color: white;
 	border-radius: 10px;
-	border: 2px solid #0080FF;
+	//border: 2px solid #0080FF;
+    border: 2px solid linear-gradient(#03C0FA, #000180);
 	margin: 10px;
     text-align: center;
     font-family: 'Nunito';
