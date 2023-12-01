@@ -18,7 +18,8 @@ export class ReproductorComponent  implements OnInit {
     onplay: () => {
       this.isPlaying = true;
       this.updateProgress();
-    }    
+    },
+    preload: true  
   });
   isPlaying = false;
   progress=0;
@@ -29,7 +30,10 @@ export class ReproductorComponent  implements OnInit {
   }
 
   ngOnInit() {
-    this.start();
+    if(this.player){
+      this.player.stop();
+    }
+    this.player.play();
   }
   
   start(){
