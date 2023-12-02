@@ -19,7 +19,9 @@ export class ReproductorComponent  implements OnInit {
       this.isPlaying = true;
       this.updateProgress();
     },
-    preload: true  
+    preload: true,
+    autoplay: true,
+    format: 'mp3'
   });
   isPlaying = false;
   progress=0;
@@ -34,6 +36,9 @@ export class ReproductorComponent  implements OnInit {
       this.player.stop();
     }
     this.player.play();
+    console.log("funciona")
+    let element: HTMLElement = document.getElementsByClassName('btnTest')[0] as HTMLElement;
+    element.click();
   }
   
   start(){
