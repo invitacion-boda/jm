@@ -19,7 +19,6 @@ export class ReproductorComponent  implements OnInit {
       this.isPlaying = true;
       this.updateProgress();
     },
-    preload: true,
     autoplay: true,
     format: 'mp3',
     mute: false
@@ -37,22 +36,12 @@ export class ReproductorComponent  implements OnInit {
       this.player.stop();
     }
     this.player.play();
-    console.log("funciona")
-    let element: HTMLElement = document.getElementsByClassName('btnTest')[0] as HTMLElement;
-    element.click();
   }
   
   start(){
     if(this.player){
       this.player.stop();
     }
-    /*this.player = new Howl({
-      src: ['assets/song/for you.mp3'],
-      onplay: () => {
-        this.isPlaying = true;
-        this.updateProgress();
-      }    
-    });*/
     this.player.play();
   }
 
