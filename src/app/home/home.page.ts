@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Params } from "@angular/router";
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { timer } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -11,6 +11,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public alertButtons = [
+    {
+      text: 'Ver invitación',
+      cssClass: 'alertBtn',
+    },
+  ];
   id: any;
   public list: any = [];
   public elem: any;
@@ -24,7 +30,9 @@ export class HomePage {
   _hour = this._minute * 60;
   _day = this._hour * 24;
 
-  constructor(private meta: Meta, private route: ActivatedRoute, private db: AngularFirestore, private toastController: ToastController) {}
+  isAlertOpen = false;
+
+  constructor(private meta: Meta, private route: ActivatedRoute, private db: AngularFirestore, private alertController: AlertController, private toastController: ToastController) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id");
@@ -42,7 +50,8 @@ export class HomePage {
       if(day<0){
         this.disabledButtons=true;
       }
-    });
+    })
+    this.showAlert();
   }
   
   openMapaLocal(){
@@ -83,5 +92,19 @@ export class HomePage {
     });
   }
 
+  async showAlert() {  
+    const alert = await this.alertController.create({
+      header: "J & M",
+      message:  "20-01-2024",
+      cssClass: 'default-alert', // <- added this
+        buttons: [
+          {
+            text: 'Ver invitación'
+          }
+        ]
+      });
+    
+      await alert.present();
+  }  
   
 }

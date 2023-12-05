@@ -21,7 +21,8 @@ export class ReproductorComponent  implements OnInit {
     },
     preload: true,
     autoplay: true,
-    format: 'mp3'
+    format: 'mp3',
+    mute: false
   });
   isPlaying = false;
   progress=0;

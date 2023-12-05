@@ -95,3 +95,33 @@
 	animation-fill-mode: both;
   }
   
+  ion-alert.custom-alert {
+    --backdrop-opacity: 0.7;
+  }
+  
+  
+  .default-alert{
+    .alert-message {
+      text-align: center !important;
+      font-family: 'Nunito' !important;
+      font-size: 18px !important;
+      color: black !important;
+      font-weight: bold !important;
+    }
+    .alert-title {
+      text-align: center !important;
+      font-family: 'GreatVibes' !important;
+      font-size: 40px !important;
+      color: #000180 !important;
+      font-weight: bold !important;
+    }
+    button {
+      color: white !important;
+      background-color: #efb810 !important;
+      width: 100% !important;
+      text-align: center !important;
+      margin-right: 0px !important;
+      padding-right: 25% !important;
+      padding-left: 25% !important;
+    }
+  }
