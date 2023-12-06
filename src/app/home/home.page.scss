@@ -34,7 +34,6 @@
 }
 
 .secundarios {
-  //--background: #00C0FE;
   background: linear-gradient(#03C0FA, #000180);
   margin-left: 0%;
   margin-right: 0%;
@@ -43,12 +42,10 @@
 
 .confirmacionBtn {
   --background: #00018A;
-  //--background: linear-gradient(#03C0FA, #000180);
   color: white;
 }
 
 .linksBtn {
-  //--background: #00018A;
   --background: #C0C0C0;
   color: #000180;
 }
@@ -77,13 +74,6 @@ ion-card-subtitle {
   text-align: center;
   font-family: 'Nunito';
   font-size: 20px;
-}
-
-.apellidos {
-  --color: #000283;
-  text-align: center;
-  font-family: 'MrDeHaviland';
-  font-size: 50px;
 }
 
 ion-label {
@@ -121,16 +111,6 @@ ion-title {
   justify-content: center;
   width: 100%;
   font-size: 20px;
-}
-
-.titulo1 {
-  text-align: center;
-  font-family: 'Nunito';
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 20px;
-  color: #627F9F;;
 }
 
 .fecha {

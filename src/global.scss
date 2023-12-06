@@ -26,11 +26,6 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 @font-face {
-    font-family: "MrDeHaviland";
-    src: url("./assets/fonts/MrDeHaviland-Regular.ttf")
-}
-
-@font-face {
     font-family: "Nunito";
     src: url("./assets/fonts/Nunito-Regular.ttf")
 }
@@ -60,8 +55,6 @@
     }
   }
   
-  
-
   img{
     animation-timeline: --image-scroll; /* binding element (--image-scroll) with the scroll */
     animation-name: scroll-img;
@@ -101,18 +94,21 @@
   
   
   .default-alert{
+    .alert-wrapper{
+      background: linear-gradient(#03C0FA, #000180) !important;
+    }
     .alert-message {
       text-align: center !important;
       font-family: 'Nunito' !important;
       font-size: 18px !important;
-      color: black !important;
+      color: #C0C0C0 !important;
       font-weight: bold !important;
     }
     .alert-title {
       text-align: center !important;
       font-family: 'GreatVibes' !important;
       font-size: 40px !important;
-      color: #000180 !important;
+      color: white !important;
       font-weight: bold !important;
     }
     button {

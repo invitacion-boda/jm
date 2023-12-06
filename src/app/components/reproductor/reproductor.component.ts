@@ -27,14 +27,12 @@ export class ReproductorComponent  implements OnInit {
   progress=0;
   @ViewChild('range', { static: false })
   range!: IonRange;
+  reproducirAgain=false;
   constructor() {
     
   }
 
   ngOnInit() {
-    if(this.player){
-      this.player.stop();
-    }
     this.player.play();
   }
   
@@ -59,6 +57,7 @@ export class ReproductorComponent  implements OnInit {
   }
 
   seek(){
+    console.log("seek")
     let newValue= +this.range.value;
     let duration = this.player?.duration();
     if(duration){
@@ -70,7 +69,10 @@ export class ReproductorComponent  implements OnInit {
     if(this.player){
       let seek = this.player.seek();
       this.progress=(seek / this.player.duration()) * 100 || 0;
-      if(this.progress==0 && seek==0){
+      if(this.progress>90){
+        this.reproducirAgain=true;
+      }
+      if(this.progress==0 && seek==0 && this.reproducirAgain==true){
         this.start();
       }
       setTimeout(()=>{
