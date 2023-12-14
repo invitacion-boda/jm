@@ -43,7 +43,7 @@ export class HomePage {
     }
     this.clock = this.source.subscribe(t => {
       this.now = new Date();
-      this.end = new Date('01/03/2024');
+      this.end = new Date('01/06/2024');
       
       let distance = this.end - this.now;
       var day = Math.floor(distance / this._day);
@@ -61,32 +61,28 @@ export class HomePage {
     window.open("https://maps.app.goo.gl/2CpKzeotPr8VxByu7");
   }
 
-  confirmarAsistencia(userId: any){
+  handleChange(ev:any, userId: any) {
+    var message="";
+    var color="light";
+    var status=JSON.stringify(ev.target.value).replace(/^"(.*)"$/, '$1');
+    if(status=="Asistiré"){
+      message="Asistencia Confirmada";
+      color="success";
+    }else if(status=="No Asistiré"){
+      color="danger";
+      message="Asistencia No Confirmada";
+    }
+
     this.db.collection(this.id).doc(userId).ref.update({
-      Asistira: true
+      Status: status
     }).then(async (test)=>{
       const toast: HTMLIonToastElement=
       await this.toastController.create({
-        message: 'Asistencia Confirmada',
+        message: message,
         duration: 2000,
-        position: 'bottom',
+        position: 'top',
         animated: true,
-        color: 'success'
-        });
-        toast.present().then();
-    });
-  }
-  desconfirmarAsistencia(userId: any){
-    this.db.collection(this.id).doc(userId).ref.update({
-      Asistira: false
-    }).then(async (test)=>{
-      const toast: HTMLIonToastElement=
-      await this.toastController.create({
-        message: 'Asistencia Desconfirmada',
-        duration: 2000,
-        position: 'bottom',
-        animated: true,
-        color: 'success'
+        color: color
         });
         toast.present().then();
     });
@@ -94,7 +90,8 @@ export class HomePage {
 
   async showAlert() {  
     const alert = await this.alertController.create({
-      header: "J & M",
+      header: "Has recibido una invitación a nuestra boda",
+      subHeader: "J & M",
       message:  "20-01-2024",
       cssClass: 'default-alert', // <- added this
         buttons: [
@@ -107,4 +104,7 @@ export class HomePage {
       await alert.present();
   }  
   
+  trackItems(index: number, item: any) {
+    return item.id;
+  }
 }

@@ -129,27 +129,32 @@
     <img src="assets/imagenes/test123.png" height="100"/>
   </div>
   <br>
-  <ion-label class="move">Confirma tu asistencia hasta el 03 de Enero</ion-label>
+  <ion-label class="ion-text-center ion-padding move">
+    Nos encantaría contar con su presencia en nuestra boda. <br>
+    Por favor, confirme su asistencia antes del 06 de Enero para que podamos planificar con anticipación y hacer que su experiencia sea lo más cómoda y placentera posible.
+  </ion-label>
   <ion-grid class="ion-padding">
-    <ion-row *ngFor="let item of list">
+    <ion-row>
+      <ion-col style="font-weight: bold;"></ion-col>
+      <ion-col style="font-weight: bold;">
+        ¿Asistirás?
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of list; trackBy: trackItems">
       <ion-col>
         {{item.Nombre}}
       </ion-col>
       <ion-col *ngIf='!disabledButtons'>
-        <ion-button (click)="confirmarAsistencia(item.Id)" *ngIf='!item.Asistira' class="confirmacionBtn">
-          Confirmar
-        </ion-button>
-        <ion-button (click)="desconfirmarAsistencia(item.Id)" *ngIf='item.Asistira' class="confirmacionBtn">
-          Desconfirmar
-        </ion-button>
+        <ion-radio-group [(ngModel)]="item.Status" (ionChange)="handleChange($event, item.Id)">
+          <ion-radio value="Asistiré" labelPlacement="start">Sí</ion-radio> &nbsp;&nbsp;
+          <ion-radio value="No Asistiré" labelPlacement="start">No</ion-radio>
+        </ion-radio-group>
       </ion-col>
       <ion-col *ngIf='disabledButtons'>
-        <ion-button (click)="confirmarAsistencia(item.Id)" *ngIf='!item.Asistira' class="confirmacionBtn" disabled>
-          Confirmar
-        </ion-button>
-        <ion-button (click)="desconfirmarAsistencia(item.Id)" *ngIf='item.Asistira' class="confirmacionBtn" disabled>
-          Desconfirmar
-        </ion-button>
+        <ion-radio-group [(ngModel)]="item.Status">
+          <ion-radio value="Asistiré" labelPlacement="start" disabled>Sí</ion-radio> &nbsp;&nbsp;
+          <ion-radio value="No Asistiré" labelPlacement="start" disabled>No</ion-radio>
+        </ion-radio-group>
       </ion-col>
     </ion-row>
   </ion-grid>

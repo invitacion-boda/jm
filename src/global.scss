@@ -104,12 +104,21 @@
       color: #C0C0C0 !important;
       font-weight: bold !important;
     }
-    .alert-title {
+    .alert-sub-title {
       text-align: center !important;
       font-family: 'GreatVibes' !important;
       font-size: 40px !important;
       color: white !important;
       font-weight: bold !important;
+    }
+
+    .alert-title {
+      text-align: center !important;
+      font-family: 'Nunito' !important;
+      font-size: 18px !important;
+      color: black !important;
+      font-weight: bold !important;
+      padding-bottom: 5%;
     }
     button {
       color: white !important;
