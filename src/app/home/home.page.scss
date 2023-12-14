@@ -159,7 +159,7 @@ ion-radio {
   --inner-border-radius: 4px;
 
   --color: #ddd;
-  --color-checked: #00018A;
+  --color-checked: #efb810;
 }
 
 ion-radio.ios::part(container) {
@@ -171,5 +171,5 @@ ion-radio.ios::part(container) {
 }
 
 .radio-checked.ios::part(container) {
-  border-color: #00018A;
+  border-color: #efb810;
 }
