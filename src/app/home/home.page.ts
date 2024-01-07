@@ -43,7 +43,7 @@ export class HomePage {
     }
     this.clock = this.source.subscribe(t => {
       this.now = new Date();
-      this.end = new Date('01/06/2024');
+      this.end = new Date('01/10/2024');
       
       let distance = this.end - this.now;
       var day = Math.floor(distance / this._day);
